@@ -626,8 +626,6 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
 
     y2 = y1;
 
-    only_directories_cbox = check_new (y1++, 3, options.only_directories, file_only_directories_label);
-    add_widget (find_dlg, only_directories_cbox);
     /* Start 1st column */
     add_widget (find_dlg, label_new (y1++, x1, file_name_label));
     in_name =
@@ -666,6 +664,9 @@ find_parameters (char **start_dir, ssize_t * start_dir_len,
 
     skip_hidden_cbox = check_new (y1++, x1, options.skip_hidden, file_skip_hidden_label);
     add_widget (find_dlg, skip_hidden_cbox);
+
+	only_directories_cbox = check_new (y1++, 3, options.only_directories, file_only_directories_label);
+    add_widget (find_dlg, only_directories_cbox);
 
     /* Continue 2nd column */
     content_regexp_cbox = check_new (y2++, x2, options.content_regexp, content_regexp_label);
